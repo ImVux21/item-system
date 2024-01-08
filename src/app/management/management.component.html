@@ -1,0 +1,30 @@
+
+
+<main>
+    <app-item (addOrUpdateItemEvent)="addOrUpdateItem($event)" [inputItem]="selectedItem"></app-item>
+    
+    <table class="styled-table">
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Print name</th>
+            <th>Major Classification</th>
+            <th>Medium Classification</th>
+            <th>#</th>
+            <th>#</th>
+        </tr>
+        <tr *ngFor="let it of items; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ it.code }}</td>
+            <td>{{ it.printName }}</td>
+            <td>{{it.majorClassification}}</td>
+            <td>{{it.mediumClassification}}</td>
+            <td><a href="" (click)="editItem(it); $event.preventDefault()" class="edit-link">Edit</a></td>
+            <td><a href="" (click)="removeItem(it); $event.preventDefault()" class="edit-link">Remove</a></td>
+        </tr>
+    </table>
+</main>
+
+<div *ngIf="isExist" class="error-message">
+    The code already exists.
+</div>

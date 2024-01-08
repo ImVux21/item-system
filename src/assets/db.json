@@ -1,0 +1,92 @@
+[
+    {
+        "majorClassification": "Major 1",
+        "mediumClassification": "Medium 1",
+        "code": "001",
+        "printName": "Print Name 1",
+        "displayName": "Display Name 1",
+        "name": "Name 1",
+        "kitchenPrintName": "Kitchen Print Name 1"
+    },
+    {
+        "majorClassification": "Major 2",
+        "mediumClassification": "Medium 2",
+        "code": "002",
+        "printName": "Print Name 2",
+        "displayName": "Display Name 2",
+        "name": "Name 2",
+        "kitchenPrintName": "Kitchen Print Name 2"
+    },
+    {
+        "majorClassification": "Major 3",
+        "mediumClassification": "Medium 3",
+        "code": "003",
+        "printName": "Print Name 3",
+        "displayName": "Display Name 3",
+        "name": "Name 3",
+        "kitchenPrintName": "Kitchen Print Name 3"
+    },
+    {
+        "majorClassification": "Major 4",
+        "mediumClassification": "Medium 4",
+        "code": "004",
+        "printName": "Print Name 4",
+        "displayName": "Display Name 4",
+        "name": "Name 4",
+        "kitchenPrintName": "Kitchen Print Name 4"
+    },
+    {
+        "majorClassification": "Major 5",
+        "mediumClassification": "Medium 5",
+        "code": "005",
+        "printName": "Print Name 5",
+        "displayName": "Display Name 5",
+        "name": "Name 5",
+        "kitchenPrintName": "Kitchen Print Name 5"
+    },
+    {
+        "majorClassification": "Major 6",
+        "mediumClassification": "Medium 6",
+        "code": "006",
+        "printName": "Print Name 6",
+        "displayName": "Display Name 6",
+        "name": "Name 6",
+        "kitchenPrintName": "Kitchen Print Name 6"
+    },
+    {
+        "majorClassification": "Major 7",
+        "mediumClassification": "Medium 7",
+        "code": "007",
+        "printName": "Print Name 7",
+        "displayName": "Display Name 7",
+        "name": "Name 7",
+        "kitchenPrintName": "Kitchen Print Name 7"
+    },
+    {
+        "majorClassification": "Major 8",
+        "mediumClassification": "Medium 8",
+        "code": "008",
+        "printName": "Print Name 8",
+        "displayName": "Display Name 8",
+        "name": "Name 8",
+        "kitchenPrintName": "Kitchen Print Name 8"
+    },
+    {
+        "majorClassification": "Major 9",
+        "mediumClassification": "Medium 9",
+        "code": "009",
+        "printName": "Print Name 9",
+        "displayName": "Display Name 9",
+        "name": "Name 9",
+        "kitchenPrintName": "Kitchen Print Name 9"
+    },
+    {
+        "majorClassification": "Major 10",
+        "mediumClassification": "Medium 10",
+        "code": "010",
+        "printName": "Print Name 10",
+        "displayName": "Display Name 10",
+        "name": "Name 10",
+        "kitchenPrintName": "Kitchen Print Name 10"
+    }
+]

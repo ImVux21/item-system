@@ -1,0 +1,72 @@
+<!-- <a [routerLink]="['/']">Back</a> -->
+
+<main>
+    <form [formGroup]="newItemForm">
+        <div class="row">
+            <label for="major-classification">Major Classification</label>
+            <input type="text" id="major-classification" formControlName="majorClassification"
+                [(ngModel)]="item.majorClassification" [value]="inputItem?.majorClassification">
+        </div>
+        <div *ngIf="errorMessagesList[0]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[0].errorMessage}}
+        </div>
+
+        <div class="row">
+            <label for="medium-classification">Medium Classification</label>
+            <input type="text" id="medium-classification" formControlName="mediumClassification"
+                [(ngModel)]="item.mediumClassification" [value]="inputItem?.mediumClassification">
+        </div>
+        <div *ngIf="errorMessagesList[1]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[1].errorMessage}}
+        </div>
+
+        <div class="row">
+            <label for="code">Code</label>
+            <input type="number" id="code" [readOnly]="isEditted()" formControlName="code" [(ngModel)]="item.code" [value]="inputItem?.code" />    
+        </div>
+        <div *ngIf="errorMessagesList[2]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[2].errorMessage}}
+        </div>
+
+        <div class="row">
+            <label for="print-name">Print Name</label>
+            <input type="text" id="print-name" formControlName="printName" [(ngModel)]="item.printName"
+                [value]="inputItem?.printName">
+        </div>
+        <div *ngIf="errorMessagesList[3]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[3].errorMessage}}
+        </div>
+
+        <div class="row">
+            <label for="display-name">Display Name</label>
+            <input type="text" id="display-name" formControlName="displayName" [(ngModel)]="item.displayName"
+                [value]="inputItem?.displayName">
+        </div>
+        <div *ngIf="errorMessagesList[4]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[4].errorMessage}}
+        </div>
+
+        <div class="row">
+            <label for="name">Name</label>
+            <input type="text" id="name" formControlName="name" [(ngModel)]="item.name" [value]="inputItem?.name">
+        </div>
+        <div *ngIf="errorMessagesList[5]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[5].errorMessage}}
+        </div>
+
+        <div class="row">
+            <label for="kitchen-print-name">Kitchen Print Name</label>
+            <input type="text" id="kitchen-print-name" formControlName="kitchenPrintName"
+                [(ngModel)]="item.kitchenPrintName" [value]="inputItem?.kitchenPrintName">
+        </div>
+        <div *ngIf="errorMessagesList[6]?.errorMessage === '' ? false : true" class="error-message">
+            {{errorMessagesList[6].errorMessage}}
+        </div>
+
+
+    </form>
+    <div class="btn-group">
+        <button type="submit" (click)="saveOrUpdate()">{{isEditted() ? "Update" : "Save"}}</button>
+        <button (click)="backToAdd()" *ngIf="isEditted()">Back</button>
+    </div>
+</main>
