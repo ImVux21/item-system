@@ -19,8 +19,8 @@
             <td>{{ it.printName }}</td>
             <td>{{it.majorClassification}}</td>
             <td>{{it.mediumClassification}}</td>
-            <td><a href="" (click)="editItem(it); $event.preventDefault()" class="edit-link">Edit</a></td>
-            <td><a href="" (click)="removeItem(it); $event.preventDefault()" class="edit-link">Remove</a></td>
+            <td><button (click)="editItem(it);" class="edit-link">Edit</button></td>    
+            <td><button (click)="removeItem(it);" class="edit-link">Remove</button></td>
         </tr>
     </table>
 </main>

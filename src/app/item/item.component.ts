@@ -76,9 +76,7 @@ export class ItemComponent implements OnChanges, OnInit {
   }
 
   ngOnInit(): void {
-      
   }
-
 
   getErrorMessage(): Error[] {
     let invalidMaxlength: string = 'maximum length is 20 characters';
@@ -116,7 +114,7 @@ export class ItemComponent implements OnChanges, OnInit {
     return this.errorMessagesList;
   }
 
-  isEditted() {   
+  isEditted() {
     return this.router.url.includes('/item/');
   }
 
@@ -146,7 +144,7 @@ export class ItemComponent implements OnChanges, OnInit {
       return;
     }
 
-    this.item = this.newItemForm.value;
+    this.item = this.newItemForm.value;    
     this.addOrUpdateItemEvent.emit(this.item);
     this.newItemForm.reset();
   }
@@ -157,6 +155,6 @@ export class ItemComponent implements OnChanges, OnInit {
   }
 
   @Output() addOrUpdateItemEvent = new EventEmitter<Item>;
-  @Input() inputItem!: Item;
+  @Input() inputItem!: any;
 
 }

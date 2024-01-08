@@ -25,7 +25,7 @@ export class ItemServiceService {
         format: 'json'
       }
     })
-    return this.http.get('assets/db1.json', options).pipe(catchError(this.handleError)); 
+    return this.http.get('assets/db.json', options).pipe(catchError(this.handleError)); 
 
     // http.post(url, body, option);
   }
@@ -37,9 +37,10 @@ export class ItemServiceService {
 
   addItem(item: Item) {
     let options = this.getStandardOptions();
-    options.headers = options.headers.set('Authorization', 'value');
-
-
+    console.log(item);
     
+    // options.headers = options.headers.set('Authorization', 'value');
+
+    return this.http.post('assets/db.json', item, options).pipe(catchError(this.handleError));
   }
 }

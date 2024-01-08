@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { Item } from '../model/item';
 import { ItemComponent } from '../item/item.component';
 import { ItemServiceService } from '../item-service.service';
-import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-management',
@@ -32,7 +31,7 @@ export class ManagementComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.itemService.getItems().subscribe(
+      this.itemService.getItems().subscribe(  
         (data: any) => {
           this.items = data;
         },
@@ -47,16 +46,19 @@ export class ManagementComponent implements OnInit {
   }
 
   addOrUpdateItem(item: Item) { 
+    let subItem = {
+      ...item
+    }
+
     if (this.isEditted()) {
-      let index = this.items.indexOf(item);
+      let index = this.items.findIndex(i => i.code === subItem.code);
+      
       if (index !== -1) {
-        let subItem = {
-          ...item
-        }
         this.items.splice(index, 1, subItem);
       }
+      
     } else {
-      if(this.items.find(i => i.code === item.code)) {
+      if(this.items.find(i => i.code === subItem.code)) {
         this.isExist = true;
 
         setTimeout(() => {
@@ -64,20 +66,17 @@ export class ManagementComponent implements OnInit {
         }, 3000);
         return;
       }
-
-      let subItem: Item = {
-        ...item
-      };
+      
       this.items.push(subItem);
     }
   }
 
   editItem(item: Item) {
     this.selectedItem = item;
-    this.router.navigate(['/item', item.code]);
+    this.router.navigate(['item', item.code]);
   }
 
-  removeItem(item: Item) {
+  removeItem(item: Item) {    
     let index = this.items.indexOf(item);
     this.items.splice(index, 1)
   }

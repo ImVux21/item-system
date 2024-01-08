@@ -21,8 +21,8 @@
         </div>
 
         <div class="row">
-            <label for="code">Code</label>
-            <input type="number" id="code" [readOnly]="isEditted()" formControlName="code" [(ngModel)]="item.code" [value]="inputItem?.code" />    
+            <label for="code">Code</label>  
+            <input type="text" id="code" [readOnly]="isEditted()" [disabled]="isEditted()" formControlName="code" [(ngModel)]="item.code" [value]="inputItem?.code" />    
         </div>
         <div *ngIf="errorMessagesList[2]?.errorMessage === '' ? false : true" class="error-message">
             {{errorMessagesList[2].errorMessage}}
