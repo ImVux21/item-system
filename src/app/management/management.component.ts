@@ -39,6 +39,7 @@ export class ManagementComponent implements OnInit {
           alert(error.message);
         }
       );
+      /// adasdasd
   }
 
   isEditted() {
