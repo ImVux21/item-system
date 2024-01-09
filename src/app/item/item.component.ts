@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, SimpleChanges, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChanges, OnChanges, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Item } from '../model/item';
@@ -17,6 +17,7 @@ export class ItemComponent implements OnChanges, OnInit {
   // mapping data
   item: Item = new Item('', '', '', '', '', '', '');
   errorMessagesList: Error[] = [];
+  @ViewChild('codeInput') codeInput!: ElementRef;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.newItemForm = new FormGroup({
@@ -73,9 +74,15 @@ export class ItemComponent implements OnChanges, OnInit {
     if (this.inputItem) {
       this.newItemForm.patchValue(this.inputItem); // Patch inputItem to form
     }
+
+    this.codeInput.nativeElement.disabled = this.isEditted();
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit() {
+
+  }
+
+  ngOnInit(): void { 
   }
 
   getErrorMessage(): Error[] {
